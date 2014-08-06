@@ -2,7 +2,8 @@
     position: absolute;
     top: 0px;
     right: 0px;
-    max-width: 200px;
+    max-width: 210px;
+    text-align: right;
 }
 
 #info, #loading {
