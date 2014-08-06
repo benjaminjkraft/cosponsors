@@ -8,5 +8,8 @@ watch:
 	watchify run.js -o bundle.js -d -v
 
 pub:
+	# no sourcemaps for "prod"
+	browserify run.js -o bundle.js
 	mkdir -p $(PUB_DIR)
 	cp $(PUB_FILES) $(PUB_DIR)
+	browserify run.js -o bundle.js -d
