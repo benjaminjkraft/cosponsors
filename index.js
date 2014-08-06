@@ -30,11 +30,13 @@ function _color(legislator) {
 }
 
 function _size(legislator) {
-    return 1 + Math.log(legislator.cosponsors);
+    var size = 1 + Math.sqrt(legislator.sponsored);
+    console.log(size, legislator);
+    return size;
 }
 
 function _linkColor(link) {
-    var lightness = 255 * (1 - link.weight);
+    var lightness = 2 * 255 / (1 + link.weight) - 2 * 255;
     return "rgb(" + lightness + "," + lightness + "," + lightness + ")";
 }
 
@@ -88,10 +90,14 @@ function processCosponsorResults (results) {
             people_by_id[pair.sponsor_id] = pair.sponsor;
             people_by_id[pair.sponsor_id].sponsored = 0;
         }
-        people_by_id[pair.sponsor_id].sponsored += 1;
         if (!people_by_id[pair.cosponsor_id]) {
             people_by_id[pair.cosponsor_id] = pair.cosponsor;
+            people_by_id[pair.cosponsor_id].sponsored = 0;
         }
+    });
+
+    _.each(results, bill => {
+        people_by_id[bill.sponsor.bioguide_id].sponsored += 1;
     });
 
     var ids = _.keys(people_by_id);
