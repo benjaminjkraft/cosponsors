@@ -36,7 +36,7 @@ function _size(legislator) {
 }
 
 function _linkColor(link) {
-    var lightness = 2 * 255 / (1 + link.weight) - 2 * 255;
+    var lightness = 4/3 * 255 / (1 + 3 * link.weight) - 1/3 * 255;
     return "rgb(" + lightness + "," + lightness + "," + lightness + ")";
 }
 
