@@ -1,0 +1,22 @@
+#info {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    max-width: 200px;
+}
+
+#info, #loading {
+    color: darkgray;
+    font-size: 10pt;
+    font-family: verdana,sans-serif;
+}
+
+#info a {
+    text-decoration: none;
+    color: gray;
+}
+
+#loading {
+    width: 100%;
+    text-align: center;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="bundle.js"></script>
+<link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+<div id="loading">loading</div>
+<div id="info">
+    <div id="params">
+        <a href="?chamber=house">house</a>
+        <a href="?chamber=house&congress=112">112</a>
+        <a href="?chamber=house&congress=111">111</a>
+        <a href="?chamber=house&congress=110">110</a>
+        <br/>
+        <a href="?chamber=senate">senate</a>
+        <a href="?chamber=senate&congress=112">112</a>
+        <a href="?chamber=senate&congress=111">111</a>
+        <a href="?chamber=senate&congress=110">110</a>
+    </div>
+    Members of congress, with links based on the bills they've cosponsored.  Bills with lots of cosponsors count for less.
+    <br/>
+    Built with the <a href="https://sunlightlabs.github.io/congress/">Sunlight Labs API</a> and <a href="https://d3js.org">d3.js</a>.  Code at <a href="https://github.com/benjaminjkraft/cosponsors">Github</a>.
+</div>
+</body>
+</html>
