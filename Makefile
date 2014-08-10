@@ -1,15 +1,14 @@
-PUB_DIR=/mit/benkraft/Public/cosponsors
-PUB_FILES=bundle.js index.html index.css
+PUB_FILES=index.html index.css # bundle.js
 
 build:
-	browserify run.js -o bundle.js -d
+	browserify run.js -t es6ify -o bundle.js -d
 
 watch:
-	watchify run.js -o bundle.js -d -v
+	watchify run.js -t es6ify -o bundle.js -d -v
 
-pub:
+publish:
 	# no sourcemaps for "prod"
-	browserify run.js -o bundle.js
-	mkdir -p $(PUB_DIR)
-	cp $(PUB_FILES) $(PUB_DIR)
-	browserify run.js -o bundle.js -d
+	mkdir -p pub
+	browserify run.js -t es6ify -o pub/bundle.js
+	cp $(PUB_FILES) pub
+	git checkout gh-pages && mv pub/* . && git commit -a -m "updated pages" && git checkout master
