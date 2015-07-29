@@ -19933,7 +19933,7 @@ function urlParam(name) {
   var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
   return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
-congress.drawCosponsorGraph(urlParam("chamber") || "senate", urlParam("congress") || 113, urlParam("bills") || 500);
+congress.drawCosponsorGraph(urlParam("chamber") || "senate", urlParam("congress") || 114, urlParam("bills") || 500);
 
 
 },{"./index":1,"jquery":3}]},{},[5]);
