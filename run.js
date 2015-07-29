@@ -9,5 +9,5 @@ function urlParam(name) {
 
 congress.drawCosponsorGraph(
         urlParam("chamber") || "senate",
-        urlParam("congress") || 113,
+        urlParam("congress") || 114,
         urlParam("bills") || 500);
