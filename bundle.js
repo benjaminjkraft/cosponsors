@@ -39,6 +39,7 @@ function get(call, params, callback, inject, num, perPage, page) {
   }
   params.apikey = apiKey;
   params.page = page;
+  params._ = document.location.origin;
   if (perPage) {
     params.per_page = perPage;
   }
